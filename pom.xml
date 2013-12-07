@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap-multiselect</artifactId>
-    <version>0a858a085d-SNAPSHOT</version>
+    <version>0.9.1-SNAPSHOT</version>
     <name>Bootstrap Multiselect</name>
     <description>WebJar for Bootstrap Multiselect</description>
     <url>http://webjars.org</url>
@@ -43,15 +43,14 @@
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>2.3.2</version>
+            <version>3.0.3</version>
         </dependency>
     </dependencies>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>0a857a085d</upstream.version>
+        <upstream.version>0.9.1</upstream.version>
         <upstream.url>https://github.com/davidstutz/bootstrap-multiselect/archive</upstream.url>
-        <upstream.commit>0a857a085d8ddc5432f497969ef6c429ffd9e6d1</upstream.commit>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
 
@@ -69,7 +68,7 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>${upstream.commit}.zip</fromFile>
+                            <fromFile>v${upstream.version}.zip</fromFile>
                             <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
@@ -89,7 +88,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap-multiselect-${upstream.commit}" includes="css/bootstrap-multiselect.css,js/bootstrap-multiselect.js" />
+                                    <fileset dir="${project.build.directory}/bootstrap-multiselect-${upstream.version}" includes="css/bootstrap-multiselect.css,js/bootstrap-multiselect.js" />
                                 </move>
                             </target>
                         </configuration>
