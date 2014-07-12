@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap-multiselect</artifactId>
-    <version>0.9.2-SNAPSHOT</version>
+    <version>0.9.5-SNAPSHOT</version>
     <name>Bootstrap Multiselect</name>
     <description>WebJar for Bootstrap Multiselect</description>
     <url>http://webjars.org</url>
@@ -49,9 +49,19 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>0.9.1</upstream.version>
+        <upstream.version>0.9.5</upstream.version>
         <upstream.url>https://github.com/davidstutz/bootstrap-multiselect/archive</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "bootstrap-multiselect": "js/bootstrap-multiselect"
+                },
+                "shim": {
+                    "bootstrap-multiselect": [ "bootstrap" ]
+                }
+            }
+        </requirejs>
     </properties>
 
     <build>
@@ -98,7 +108,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
