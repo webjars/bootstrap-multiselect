@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap-multiselect</artifactId>
-    <version>0.9.10-2-SNAPSHOT</version>
+    <version>0.9.11-SNAPSHOT</version>
     <name>Bootstrap Multiselect</name>
     <description>WebJar for Bootstrap Multiselect</description>
     <url>http://webjars.org</url>
@@ -49,7 +49,7 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>0.9.10</upstream.version>
+        <upstream.version>0.9.11</upstream.version>
         <upstream.url>https://github.com/davidstutz/bootstrap-multiselect/archive</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
@@ -94,11 +94,11 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
-                                <echo message="moving resources" />
+                                <echo message="unzip archive"/>
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
+                                <echo message="moving resources"/>
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap-multiselect-${upstream.version}/dist" />
+                                    <fileset dir="${project.build.directory}/bootstrap-multiselect-${upstream.version}/dist"/>
                                 </move>
                             </target>
                         </configuration>
