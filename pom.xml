@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap-multiselect</artifactId>
-    <version>0.9.14-SNAPSHOT</version>
+    <version>0.9.13-1-SNAPSHOT</version>
     <name>Bootstrap Multiselect</name>
     <description>WebJar for Bootstrap Multiselect</description>
     <url>http://webjars.org</url>
